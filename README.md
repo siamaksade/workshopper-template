@@ -9,7 +9,7 @@ use Workshopper, consult the docs on its [GitHub Repository](https://github.com/
 # File Structure
 
 ### `_modules.yml`
-Lists all labs and their dependencies and has to be in the root of the repository
+Lists all labs, their dependencies and where the lab content is hosted (GitHub, web server, etc). Note that this file has to be in the root of the repository.
 
 ### `_workshop1.yml`
 A yaml file with arbitrary name that specifies which labs should be included in the rendered workshop guide. Note that the lab names should already be listed in `_modules.yml`. It goes without going that you can have multiple of these yaml files to customize your workshop for different purposes.
@@ -23,7 +23,6 @@ You can deploy Workshopper as a container image anywhere but most conveniently, 
 
 ```
 $ oc new-app osevg/workshopper --name=myworkshop \
-      -e CONTENT_URL_PREFIX="https://raw.githubusercontent.com/siamaksade/workshopper-template/master" \
       -e WORKSHOPS_URLS="https://raw.githubusercontent.com/siamaksade/workshopper-template/master/_workshop1.yml" \
       -e JAVA_APP=false 
 $ oc expose svc/myworkshop
