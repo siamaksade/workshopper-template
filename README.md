@@ -6,7 +6,7 @@ use Workshopper, consult the docs on its [GitHub Repository](https://github.com/
 
 ![Workshopper](images/workshopper.png)
 
-# File Structure
+## File Structure
 
 ### `_modules.yml`
 Lists all labs, their dependencies and where the lab content is hosted (GitHub, web server, etc). Note that this file has to be in the root of the repository.
@@ -17,7 +17,7 @@ A yaml file with arbitrary name that specifies which labs should be included in 
 ### `*.md` or `*.adoc`
 The actual lab instructions depending on which markup language you have chosen (specified in `_modules.yml`). Node that the name of the file should be the exact same name as the key in `_modules.yml`.
 
-### Deploy On OpenShift
+## Deploy On OpenShift
 
 You can deploy Workshopper as a container image anywhere but most conveniently, you can deploy it on OpenShift Online or other OpenShift flavours:
 
@@ -28,12 +28,12 @@ $ oc new-app osevg/workshopper --name=myworkshop \
 $ oc expose svc/myworkshop
 ```
 
-The lab content (`.md` and `.adoc` files) will be pulled from the GitHub when a user access the workshopper in 
+The lab content (`.md` and `.adoc` files) will be pulled from the GitHub when users access the workshopper in 
 their browser.
 
 Note that the workshop variables can be overriden via specifying environment variables on the container itself e.g. the `JAVA_APP` env var in the above command
 
-### Test Locally with Docker
+## Test Locally with Docker
 
 You can directly run Workshopper as a docker container which is specially helpful when writing the content.
 ```
