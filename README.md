@@ -4,6 +4,8 @@ This repository containers a template for building lab and workshop content usin
 or lab guide. The content of each lab could be written in Markdown or AsciiDoc. For more details on how to 
 use Workshopper, consult the docs on its [GitHub Repository](https://github.com/openshift-evangelists/workshopper).
 
+![Workshopper](images/workshopper.png)
+
 # File Structure
 
 ### `_modules.yml`
