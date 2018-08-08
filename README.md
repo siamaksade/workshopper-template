@@ -22,7 +22,7 @@ The actual lab instructions depending on which markup language you have chosen (
 You can deploy Workshopper as a container image anywhere but most conveniently, you can deploy it on OpenShift Online or other OpenShift flavours:
 
 ```
-$ oc new-app osevg/workshopper --name=myworkshop \
+$ oc new-app quay.io/osevg/workshopper --name=myworkshop \
       -e WORKSHOPS_URLS="https://raw.githubusercontent.com/siamaksade/workshopper-template/master/_workshop1.yml" \
       -e JAVA_APP=false 
 $ oc expose svc/myworkshop
@@ -40,7 +40,7 @@ You can directly run Workshopper as a docker container which is specially helpfu
 $ docker run -p 8080:8080 -v $(pwd):/app-data \
               -e CONTENT_URL_PREFIX="file:///app-data" \
               -e WORKSHOPS_URLS="file:///app-data/_workshop1.yml" \
-              osevg/workshopper:latest 
+              quay.io/osevg/workshopper
 ```
 
 Go to http://localhost:8080 on your browser to see the rendered workshop content. You can modify the lab instructions 
